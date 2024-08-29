@@ -1,0 +1,142 @@
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: #222;
+  padding: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+canvas {
+  background: #fff;
+}
+
+header {
+  grid-area: header;
+  background: silver;
+  padding: 1px;
+}
+
+
+#header-top {
+  display: flex;
+  background: rgb(4, 4, 105);
+  font-size: small;
+  color: white;
+  height: 20px;
+  justify-content:space-between ;
+}
+
+#header-top > div {
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+}
+
+
+#header-top > div > button {
+  border:0;
+  box-shadow: 1px 1px black, inset -1px -1px gray, inset 1px 1px white;
+  background: #bdbdbd;
+  font-weight: 900;
+}
+
+#header-bottom > button{
+  border: 0;
+  background: transparent;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#header-bottom > button:hover,
+#header-top > button:hover {
+  box-shadow: 1px 1px black, inset -1px -1px gray, inset 1px 1px white;
+}
+
+#header-bottom > button::first-letter {
+  text-decoration: underline;
+}
+
+main {
+  grid-area: main;
+  padding: 16px;
+}
+
+footer {
+  grid-area: footer;
+  background: silver;
+  padding: 4px;
+}
+
+#container {
+  border: 1px solid #808080;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+}
+
+aside {
+  background: silver;
+  grid-area: aside;
+  width: 52px;
+  padding-top: 2px;
+}
+
+aside nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  justify-content: center;
+}
+
+aside button {
+  width: 24px;
+  height: 24px;
+  background: #bdbdbd url("./icons/draw.png") no-repeat center;
+  border: 1.5px solid #eee;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  image-rendering: pixelated;
+}
+
+aside button.active {
+  background-color: #eee;
+  border-color: #000;
+  border-right-color: #eee;
+  border-bottom-color: #eee;
+}
+
+aside button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#erase-btn {
+  background-image: url("./icons/erase.png");
+}
+
+#rectangle-btn {
+  background-image: url("./icons/rectangle.png");
+}
+
+#ellipse-btn {
+  background-image: url("./icons/ellipse.png");
+}
+
+#picker-btn {
+  background-image: url("./icons/picker.png");
+}
+
+#clear-btn {
+  background-image: url("./icons/trash.png");
+  background-size: 18px;
+}
